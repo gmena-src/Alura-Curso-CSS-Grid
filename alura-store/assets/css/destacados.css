@@ -1,0 +1,85 @@
+.destaques {
+    /*definimos que tendra display grid*/
+    display: grid;
+    /*Grillamos a gusto 4 columnas y 3 filas*/
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: 33.33% 33.33% 33.33%;
+    /*determinamos la altura del area destaques restando los 50px del area Encabezado*/
+    height: calc(100vh - 50px);/*Altura del contenedor*/
+    gap: .2rem;/*La propiedad CSS establece los epacios ( canalones ) entre filas y columnas. Es una abreviatura de y .gap row-gapcolumn-gap*/
+}
+.destaques__principal {
+    background: url('../img/fortnite.jpg');/*colocamos la img de fondo*/
+    background-size: cover; /*cubre el espacio que le corresponde*/
+    background-position: center;
+    background-repeat: no-repeat;/*si la imagen es mas peque;a de lo esperado se repetira con esto lo impedios*/
+    grid-column-start: 1;/*con grid column y row posiscionamos el elemeneto donde queremos*/
+    grid-column-end: 4;/*le indicamos que ocupara 3 columnas por eso se coloca de 1-4*/
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.destaques__secundario:nth-child(2) {/*La pseudo-clase :nth-child() de CSS coincide con uno o más elementos en función de su posición entre un grupo de hermanos.*/
+   background: url(../img/pubg.jpg) center / cover no-repeat;/*reduciendo cogdigo*/ 
+   /*background: cover;
+   background-position: center;
+   background-repeat: no-repeat;*/
+   grid-column: 4 / 5; /*reducido (comienza / termina)Si utilizo span determina la fila en si*/
+   grid-row: 1 / 2;
+   /*grid-column-start: 4;
+   grid-column-end: 5;
+   grid-row-start: 1;
+   grid-row-end: 2;*/
+}
+.destaques__secundario:nth-child(3) {
+    background: url(../img/slack.png) center / cover no-repeat; 
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    /*grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;*/
+ }
+ .destaques__secundario:nth-child(4) {
+    background: url(../img/whatsapp.png) center / cover no-repeat; 
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+ }
+ .destaques__secundario:nth-child(5) {
+    background: url(../img/cs-go.jpg) center / cover no-repeat; 
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+ }
+ .destaques__categorias {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;    
+ }
+ .destaques__categorias___lista {/*Definimos la caja mayor que engloba las listas*/
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-between;
+ }
+ /*Items de las categorias*/
+ .destaques__categorias___item {
+    align-items: center;
+    background: #fdfdfd;
+    display: flex;/*aplicamos display-flex para que funcione nuestra distribucion*/
+    color: #333333;
+    width: 50%;
+    padding: 1rem;
+ }
+ .destaques__categorias___link {
+    color: inherit;
+ }
+ .destaques__titulo {
+    color: #fdfdfd;
+    background: rgb( 0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    padding: .6rem;
+ }
+ .box{/*Llevamos los titulos al final de la caja*/
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+}
